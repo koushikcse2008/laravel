@@ -30,3 +30,58 @@ Route::get('/create-migration', function () {
 })->name('create-migration');
 
 Route::get("/accessor-mutator", 'AccessorMutatorController@index')->name('accessor-mutator');
+
+Route::resource('user', UserController::class);
+
+# Different methods
+Route::get('/helper-process', function () {
+    return view('process.helper-process');
+})->name('helper-process');
+
+Route::get('/routes-process', function () {
+    return view('process.routes-process');
+})->name('routes-process');
+
+Route::get('/softdelete-process', function () {
+    return view('process.softdelete-process');
+})->name('softdelete-process');
+
+Route::get('/pagination-process', function () {
+    return view('process.pagination-process');
+})->name('pagination-process');
+
+Route::get('/faker-seeder-process', function () {
+    return view('process.faker-seeder-process');
+})->name('faker-seeder-process');
+
+Route::get('/db-seeder-process', function () {
+    return view('process.db-seeder-process');
+})->name('db-seeder-process');
+
+Route::get('/trait-process', function () {
+    return view('process.trait-process');
+})->name('trait-process');
+
+Route::get('/event-listener-process', function () {
+    return view('process.event-listener-process');
+})->name('event-listener-process');
+
+Route::get('/send-email-process', function () {
+    return view('process.send-email-process');
+})->name('send-email-process');
+
+Route::get('/form-validation-process', function () {
+    return view('process.form-validation-process');
+})->name('form-validation-process');
+
+Route::get('/image-upload-process', function () {
+    return view('process.image-upload-process');
+})->name('image-upload-process');
+
+Route::get('/custom-route-process', function () {
+    return view('process.custom-route-process');
+})->name('custom-route-process');
+
+Route::get('/custom-artisan-process', function () {
+    return view('process.custom-artisan-process');
+})->name('custom-artisan-process');

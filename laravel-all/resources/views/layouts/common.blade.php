@@ -11,7 +11,14 @@
     @include('layouts.header')
 
     <div class="container p-4">
-        @yield('content')
+        <div class="row">
+            <div class="col-lg-4">
+                @include('layouts.sidebar')
+            </div>
+            <div class="col-lg-8">
+                @yield('content')
+            </div>        
+        </div>
     </div>
 
     @include('layouts.footer')

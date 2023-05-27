@@ -1,0 +1,37 @@
+composer create-project laravel/laravel laravel8-ecommerce --prefer-dist
+
+composer require livewire/livewire
+
+php artisan make:livewire HomeComponent
+no
+
+php artisan make:livewire ShopComponent
+php artisan make:livewire CartComponent
+php artisan make:livewire CheckoutComponent
+
+composer require laravel/Jetstream
+
+php artisan jetstream:install livewire
+
+php artisan migrate
+
+php artisan optimize:clear
+
+php artisan make:middleware AuthAdmin
+
+php artisan make:livewire admin/AdminDashboardComponent
+
+php artisan make:livewire user/UserDashboardComponent
+
+
+
+
+
+
+
+
+
+
+
+
+
