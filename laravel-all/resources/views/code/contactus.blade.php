@@ -1,0 +1,2 @@
+Pagination Links:
+{{ $data->links() }}

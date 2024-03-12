@@ -38,6 +38,9 @@ Route::get('/helper-process', function () {
     return view('process.helper-process');
 })->name('helper-process');
 
+Route::get('/helper', 'HelperController@index')->name('helper');
+
+
 Route::get('/routes-process', function () {
     return view('process.routes-process');
 })->name('routes-process');
@@ -49,6 +52,8 @@ Route::get('/softdelete-process', function () {
 Route::get('/pagination-process', function () {
     return view('process.pagination-process');
 })->name('pagination-process');
+
+Route::get('/pagination', 'ContactusController@index')->name('pagination');
 
 Route::get('/faker-seeder-process', function () {
     return view('process.faker-seeder-process');
