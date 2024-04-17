@@ -4,7 +4,7 @@
 
 <h3 class="font-weight-bold text-danger text-decoration-underline border-bottom">Instruction for the Image Upload function work:</h3>
 
-# Step 1: Open Route Service Provider file within app/provider: <br />
+<strong># Step 1: Open Route Service Provider file within app/provider:</strong> <br />
     public function map() <br />
     { <br />
         $this->mapApiRoutes(); <br />
@@ -63,7 +63,7 @@
             ->group(base_path('routes/user.php')); <br />
     } <br /> <br />
 
-#Step 2: We can use route as below: <br />
+    <strong>#Step 2: We can use route as below:</strong> <br />
 #1 http://localhost:8000/ <br />
 #2 http://localhost:8000/manager/* <br />
 #3 http://localhost:8000/admin/* <br />

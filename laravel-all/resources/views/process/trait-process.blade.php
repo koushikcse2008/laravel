@@ -4,7 +4,7 @@
 
 <h3 class="font-weight-bold text-danger text-decoration-underline border-bottom">Instruction for the Trait function work:</h3>
 
-#Step 1: Create Traits file and ImageTrait: <br />
+<strong>#Step 1: Create Traits file and ImageTrait: </strong><br />
 Create a folder inside app directory named Traits and inside it create ImageTrait <br />
 Let's create a new trait with verifyAndUpload() function. Paste the code below: <br /> <br />
 app/Traits/ImageTrait.php <br />
@@ -33,7 +33,7 @@ trait ImageTrait { <br />
     } <br />
 } <br />
 
-#Step 2: Create the controller that will use ImageTrait:  <br />
+<strong>#Step 2: Create the controller that will use ImageTrait:</strong>  <br />
 
 Paste the code below. <br />
 app/Http/Controllers/ItemController.php <br /> <br />
@@ -69,7 +69,7 @@ class ItemController extends Controller <br />
     } <br />
 } <br />
 
-#Step 3: Insert and use ImageTrait on your Controller:  <br />
+<strong>#Step 3: Insert and use ImageTrait on your Controller:</strong>  <br />
 
 Paste the uses of ImageTrait. <br />
 app/Http/Controllers/ItemController.php <br /> <br />

@@ -4,23 +4,23 @@
 
 <h3 class="font-weight-bold text-danger text-decoration-underline border-bottom">Instruction for the Softdelete function work:</h3> <br /> 
 
-#1 Create/Select migration file and add the below code: <br /> 
+<strong>#1 Create/Select migration file and add the below code:</strong> <br /> 
 $table->softDeletes(); <br />  <br /> 
 
-#2 Create/Select model and add below code: <br /> 
+<strong>#2 Create/Select model and add below code</strong>: <br /> 
 use Illuminate\Database\Eloquent\SoftDeletes; <br /> 
 use HasFactory; <br /> 
 use SoftDeletes; <br /> 
 protected $dates = ['deleted_at']; <br />  <br /> 
 
-#3 Delete Data: <br /> 
+<strong>#3 Delete Data:</strong> <br /> 
 Product::where(‘id’, 1)->delete(); <br />  <br /> 
 
-#4 Get Deleted Data: <br /> 
+<strong>#4 Get Deleted Data:</strong> <br /> 
 Product::onlyTrashed()->get(); <br /> 
 Product::withTrashed()->restore(); <br />  <br /> 
 
-#5 Delete from the table: <br /> 
+<strong>#5 Delete from the table:</strong> <br /> 
 Product::withTrashed()->find(1)->forceDelete(); <br /> 
 
 

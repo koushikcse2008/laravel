@@ -90,3 +90,19 @@ Route::get('/custom-route-process', function () {
 Route::get('/custom-artisan-process', function () {
     return view('process.custom-artisan-process');
 })->name('custom-artisan-process');
+
+Route::get('/register-login-process', function () {
+    return view('process.register-login-process');
+})->name('register-login-process');
+
+Route::get('/middleware-process', function () {
+    return view('process.middleware-process');
+})->name('middleware-process');
+
+Route::get('/multiple-route-process', function () {
+    return view('process.multiple-route-process');
+})->name('multiple-route-process');
+
+Route::get('/mail-process', function () {
+    return view('process.mail-process');
+})->name('mail-process');

@@ -20,7 +20,7 @@ Route::patch($uri, $callback); <br />
 Route::delete($uri, $callback); <br />
 Route::options($uri, $callback);
 =================================================== <br />
-Route::match(['get', 'post'], '/', function () { <br />
+<strong>Route::match(['get', 'post'], '/', function () { </strong> <br />
     // ... <br />
 }); <br />
  
@@ -29,7 +29,7 @@ Route::any('/', function () { <br />
 }); <br />
 =================================================== <br />
 use Illuminate\Http\Request; <br />
-Route::get('/users', function (Request $request) { <br />
+<strong>Route::get('/users', function (Request $request) { </strong> <br />
     // ...
 }); <br />
 =================================================== <br />
@@ -44,9 +44,9 @@ Route::get('/user/{name?}', function (string $name = null) { <br />
     return $name; <br />
 }); <br /> <br />
 
-Route::get('/user/{name}', function (string $name) { <br />
+<strong>Route::get('/user/{name}', function (string $name) { <br />
     // ... <br />
-})->where('name', '[A-Za-z]+'); <br /> <br />
+})->where('name', '[A-Za-z]+');</strong> <br /> <br />
  
 Route::get('/user/{id}', function (string $id) { <br />
     // ... <br />
@@ -79,10 +79,10 @@ Route::get('/category/{category}', function (string $category) { <br />
 Route::pattern('id', '[0-9]+');  //in the boot method <br />
 ===================================================== <br />
 // Generating URLs... <br />
-$url = route('profile'); <br /> <br />
+<strong>$url = route('profile');</strong> <br /> <br />
  
 // Generating Redirects... <br />
-return redirect()->route('profile'); <br /> <br />
+<strong>return redirect()->route('profile');</strong> <br /> <br />
  
 return to_route('profile'); <br />
 ======================================================== <br />
@@ -92,7 +92,7 @@ Route::get('/user/{id}/profile', function (string $id) { <br />
  
 $url = route('profile', ['id' => 1]); <br /> <br />
 
-Route::middleware(['first', 'second'])->group(function () { <br />
+<strong>Route::middleware(['first', 'second'])->group(function () { <br />
     Route::get('/', function () { <br />
         // Uses first & second middleware... <br />
     }); <br /> <br />
@@ -100,14 +100,14 @@ Route::middleware(['first', 'second'])->group(function () { <br />
     Route::get('/user/profile', function () { <br />
         // Uses first & second middleware... <br />
     }); <br />
-});
+});</strong>
 ======================================================== <br />
 use App\Http\Controllers\OrderController; <br /> <br />
  
-Route::controller(OrderController::class)->group(function () { <br />
+<strong>Route::controller(OrderController::class)->group(function () { <br />
     Route::get('/orders/{id}', 'show'); <br />
     Route::post('/orders', 'store'); <br />
-});
+});</strong>
 ======================================================= <br />
 Route::domain('{account}.example.com')->group(function () { <br />
     Route::get('user/{id}', function (string $account, string $id) { <br />

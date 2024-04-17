@@ -4,22 +4,22 @@
 
 <h3 class="font-weight-bold text-danger text-decoration-underline border-bottom">Instruction for the Send Email  function work:</h3>
 
-# Steps 1: <br />
+<strong># Steps 1:</strong> <br />
 php artisan make:mail NotifyMail <br />
 return $this->view('view.name'); <br />
 to <br />
 return $this->view('emails.demoMail'); <br /> <br />
 
-# Step 2 – Add Send Email Route: <br />
+<strong># Step 2 – Add Send Email Route:</strong> <br />
 use App\Http\Controllers\SendEmailController; <br />
 Route::get('send-email', [SendEmailController::class, 'index']); <br /> <br />
 
-# Step 3 – Create Directory And Blade View: <br />
+<strong># Step 3 – Create Directory And Blade View:</strong> <br />
 Create an demoMail.blade.php blade view file inside resources/views/emails directory. <br />
 <h5>This is test mail from Tutsmake.com</h5> 
 <p>Laravel 8 send email example</p> <br /> 
 
-# Step 4 – Create Send Email Controller: <br />
+<strong># Step 4 – Create Send Email Controller:</strong> <br />
 php artisan make:controller SendEmailController <br /> <br />
 
 use Mail; <br />

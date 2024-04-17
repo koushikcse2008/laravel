@@ -18,10 +18,10 @@
 
     <div class="container p-4">
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-4 bg-secondary rounded">
                 @include('layouts.sidebar')
             </div>
-            <div class="col-lg-8">
+            <div class="col-lg-8 p-4 rounded bg-light">
                 @yield('content')
             </div>        
         </div>

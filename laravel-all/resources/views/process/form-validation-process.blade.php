@@ -4,11 +4,11 @@
 
 <h3 class="font-weight-bold text-danger text-decoration-underline border-bottom">Instruction for the Form Field Validation function work:</h3>
 
-# Steps 1: Create Route: <br />
+<strong> Steps 1: Create Route:</strong> <br />
 Route::get('user/create', [ HomeController::class, 'create' ]); <br />
 Route::post('user/create', [ HomeController::class, 'store' ]); <br /> <br />
 
-# Steps 2: Create Controller: <br />
+<strong># Steps 2: Create Controller:</strong> <br />
 php artisan make:controller HomeController <br />
 public function store(Request $request) <br />
 { <br />
@@ -44,7 +44,7 @@ public function store(Request $request) <br />
       return back()->with('success', 'Your form has been submitted.'); <br />
 } <br /> <br />
 
-# Steps 3: Create field error message: <br />
+<strong># Steps 3: Create field error message:</strong> <br />
 if ($errors->has('name')) <br />
 <span class="text-danger"> $errors->first('name')</span> <br />
 endif

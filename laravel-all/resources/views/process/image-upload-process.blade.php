@@ -4,18 +4,18 @@
 
 <h3 class="font-weight-bold text-danger text-decoration-underline border-bottom">Instruction for the Image Upload function work:</h3>
 
-# Steps 1: Create Controller: <br />
+<strong># Steps 1: Create Controller:</strong> <br />
 php artisan make:controller ImageUploadController <br /> <br />
 
-# Steps 2: Write Route: <br />
+<strong># Steps 2: Write Route:</strong> <br />
 Route::get('/image-upload', 'ImageUploadController@index')->name('image-upload.index'); <br />
 Route::post('/image-upload', 'ImageUploadController@upload')->name('image-upload.post'); <br /> <br />
 
-# Steps 3: Write Route: <br />
+<strong># Steps 3: Write Route:</strong> <br />
 
 php artisan make:request ImageUploadRequest <br /> <br />
 
-# Steps 4: Write Controller Codes: <br />
+<strong># Steps 4: Write Controller Codes:</strong> <br />
 use App\Http\Requests\ImageUploadRequest; <br /> <br />
 
 public function index()  <br />
