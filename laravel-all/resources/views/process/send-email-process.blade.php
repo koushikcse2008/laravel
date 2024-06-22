@@ -1,5 +1,7 @@
 @extends('layouts.common')
 
+@section('title', 'Send Email')
+
 @section('content')
 
 <h3 class="font-weight-bold text-danger text-decoration-underline border-bottom">Instruction for the Send Email  function work:</h3>
@@ -22,6 +24,8 @@ Create an demoMail.blade.php blade view file inside resources/views/emails direc
 <strong># Step 4 – Create Send Email Controller:</strong> <br />
 php artisan make:controller SendEmailController <br /> <br />
 
+<xmp>
+@verbatim
 use Mail; <br />
 use App\Mail\NotifyMail; <br />
 
@@ -31,8 +35,9 @@ if (Mail::failures()) { <br />
 } else { <br />
     return response()->json(['status' => 'success', 'message' => 'Great! Successfully send in your mail']); <br />
 }
-
-
+@endverbatim
+</xmp>
+    
 
 @endsection
 

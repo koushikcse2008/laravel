@@ -1,5 +1,7 @@
 @extends('layouts.common')
 
+@section('title', 'Pagination Process')
+
 @section('content')
 
 <h3 class="font-weight-bold text-danger text-decoration-underline border-bottom">Instruction for the Pagination function work:</h3>

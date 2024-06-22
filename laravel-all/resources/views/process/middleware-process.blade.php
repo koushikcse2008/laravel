@@ -1,5 +1,7 @@
 @extends('layouts.common')
 
+@section('title', 'Middleware Process')
+
 @section('content')
 
 <h3 class="font-weight-bold text-danger text-decoration-underline border-bottom">Instruction for the Middleware work:</h3>
@@ -11,17 +13,21 @@ php artisan make:middleware  GeneralMiddleware<br /><br />
 'general' => \App\Http\Middleware\GeneralMiddleware::class,<br /><br />
 
 <strong>Step 3: Add this middleware in the route</strong><br />
-Route::get('/login', 'CustomLoginController@login')->middleware('general');<br /><br />
+<xmp>
+@verbatim
+Route::get('/login', 'CustomLoginController@login')->middleware('general');
 
-Route::middleware(['first', 'second'])->group(function () {<br /><br />
-    Route::get('/dashboard', function () {<br />
-    // Uses first & second middleware...<br />
-    });<br /><br />
+Route::middleware(['first', 'second'])->group(function () {
+    Route::get('/dashboard', function () {
+    // Uses first & second middleware...
+    });
     
-    Route::get('/user/profile', function () {<br />
-    // Uses first & second middleware...<br />
-    });<br /><br />
+    Route::get('/user/profile', function () {
+    // Uses first & second middleware...
+    });
 });
+@endverbatim
+</xmp>
 
 @endsection
 

@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,7 +38,6 @@ Route::get('/helper-process', function () {
 })->name('helper-process');
 
 Route::get('/helper', 'HelperController@index')->name('helper');
-
 
 Route::get('/routes-process', function () {
     return view('process.routes-process');
@@ -106,3 +104,12 @@ Route::get('/multiple-route-process', function () {
 Route::get('/mail-process', function () {
     return view('process.mail-process');
 })->name('mail-process');
+
+Route::get('/csv-import-process', function () {
+    return view('process.csv-import-process');
+})->name('csv-import-process');
+
+Route::get('/csv-export-process', function () {
+    return view('process.csv-export-process');
+})->name('csv-export-process');
+

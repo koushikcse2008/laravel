@@ -1,64 +1,72 @@
 @extends('layouts.common')
 
+@section('title', 'Register Login')
+
 @section('content')
 
 <h3 class="font-weight-bold text-danger text-decoration-underline border-bottom">Instruction for the Register/Login function work:</h3>
 
 <strong>#1 Register and Login in the same function</strong> <br />  <br />
 
-use Illuminate\Support\Facades\Auth;<br />
-use Illuminate\Support\Facades\Hash;<br /><br />
+<xmp>
+@verbatim    
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
-<strong>//Validation</strong><br />
-$validated = $request->validate([<br />
-            'name' => 'required|string|max:250',<br />
-            'email' => 'required|email|max:250|unique:users',<br />
-            'password' => 'required|min:4|confirmed'<br />
-        ],<br />
-        [<br />
-            'name.required' => "Please enter your name",<br />
-            'email.required' => "Please enter your email id",<br />
-            'password.required' => "Please enter your password",<br />
-        ]);<br /><br />
+$validated = $request->validate([
+            'name' => 'required|string|max:250',
+            'email' => 'required|email|max:250|unique:users',
+            'password' => 'required|min:4|confirmed'
+        ],
+        [
+            'name.required' => "Please enter your name",
+            'email.required' => "Please enter your email id",
+            'password.required' => "Please enter your password",
+        ]);
 
-<strong>//User Create</strong><br />
-User::create([<br />
-            'name' => $request->name,<br />
-            'email' => $request->email,<br />
-            'password' => Hash::make($request->password)<br />
-]);<br /><br />
+User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password)
+]);
 
-<strong>//Login credential checking</strong><br />
-$credentials = $request->only('email', 'password');<br />
-/*$credentials = array(<br />
-'email' => $request->email,<br />
- 	'password' => $request->password<br />
-);*/<br /><br />
+$credentials = $request->only('email', 'password');
+/*$credentials = array(
+'email' => $request->email,
+ 	'password' => $request->password
+);*/
 
-<strong>//Login credential checking method</strong><br />
-Auth::attempt($credentials);<br />
-$request->session()->regenerate();<br />
-return redirect()->route('user.dashboard')->withSuccess('You have successfully registered & logged in!');<br /><br />
+Auth::attempt($credentials);
+$request->session()->regenerate();
+return redirect()->route('user.dashboard')->withSuccess('You have successfully registered & logged in!');
 
+@endverbatim
+</xmp>
 <strong>Errors:</strong><br />
 
-
+<xmp>
 @verbatim
-@if ($errors->any())<br />
-    @foreach ($errors->all() as $error)<br />
-    {{ $error }}<br />
-    @endforeach<br />
-@endif<br /><br />
+@if ($errors->any())
+      <div class="alert alert-danger">
+         <ul>
+            @foreach ($errors->all() as $error)
+                   <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+      </div>
+@endif
 @endverbatim
+</xmp>
 
-
-
+<br />
 <strong>Below input option:</strong><br />
+<xmp>
 @verbatim
-@error('email')<br />
-        {{ $message }}<br />
+@error('email')
+        <div class="alert alert-danger">{{ $message }}</div>
 @enderror
 @endverbatim
+</xmp>
 
 
 @endsection

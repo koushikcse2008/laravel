@@ -1,12 +1,15 @@
 @extends('layouts.common')
 
+@section('title', 'Route Process')
+
 @section('content')
 
 <h3 class="font-weight-bold text-danger text-decoration-underline border-bottom">Instruction for the Router work:</h3>
 
 <h5 class="font-weight-bold text-primary border-bottom-2px">Install the helper package: </h5>
 <p>composer require laravel/helpers</p>
-
+<xmp>
+@verbatim
 use Illuminate\Support\Facades\Route; <br />
  
 Route::get('/greeting', function () {
@@ -121,7 +124,8 @@ Route::prefix('admin')->group(function () { <br />
     }); <br />
 });
 
-
+@endverbatim
+</xmp>
 
 @endsection
 
